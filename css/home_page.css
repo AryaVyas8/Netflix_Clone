@@ -145,6 +145,10 @@ ul, li{
     margin-left: 20px;
     display: flex;
     gap: 220px;
+    overflow: scroll;
+}
+.t10movies::-webkit-scrollbar {
+  display: none;
 }
 .t10movie_block{
     height: 200px;
@@ -184,10 +188,14 @@ ul, li{
     margin-top: 20px;
     display: grid;
     place-content: center;
+    color: rgb(136, 136, 136);
 }
 .social_links{
     display: flex;
     gap: 20px;
+}
+.social_links > img:hover{
+    cursor: pointer;
 }
 
 .extra_info{
@@ -197,14 +205,25 @@ ul, li{
     font-size: 15px;
     gap: 50px;
 }
+.extra_items:hover{
+    color: white;
+    transition: 0.1s;
+    cursor: pointer;
+}
 .btn_service_code{
     margin-top: 20px;
     height: 30px;
     width: 150px;
-    border: 2px solid white;
+    border: 2px solid rgb(136, 136, 136);
     justify-content: center;
     place-content: center;
     text-align: center;
+}
+.btn_service_code:hover{
+    background-color: white;
+    border: 2px solid white;
+    color: black;
+    transition: 0.1s;
 }
 .social_links > img{
     height: 30px;

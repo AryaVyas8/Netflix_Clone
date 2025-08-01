@@ -7,6 +7,7 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     color: white;
     display: grid;
+    place-content: center;
     justify-content: center;
     align-content: center;
 }
@@ -27,6 +28,14 @@ body{
     width: 150px;
     background-color: aquamarine;
 }
+.profile_user_image :hover{
+    border: 2px solid white;
+}
+.profile_user_image > img{
+    height: 150px;
+    width: 150px;
+    object-fit: contain;
+}
 .profile_user_name{
     height: 30px;
     width: 150px;
@@ -44,4 +53,81 @@ body{
     justify-content: center;
     align-items: center;
     border: 2px solid white;
+}
+.btn_manage_profiles:hover{
+    background-color: white;
+    transition: 0.3s;
+    color: black;
+    cursor: pointer;
+}
+
+@media (max-width: 750px) {
+    .profiles{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .profiles > :last-child {
+  grid-column: 1 / -1;
+  justify-self: center;
+}
+    .profile{
+        height: 126px;
+        width: 105px;
+    }
+    .profile_user_image{
+        height: 105px;
+        width: 105px;
+        background-color: aquamarine;
+    }
+    .profile_user_image > img{
+        height: 105px;
+        width: 105px;
+        object-fit: contain;
+    }
+    .profile_user_name{
+        height: 21px;
+        width: 105px;
+    }
+    .question{
+        font-size: 35px;    
+    }
+    .btn_manage_profiles{
+        height: 35px;
+        width: 175px; 
+        font-size: 18px;
+        margin-top: calc(80px * 0.7);
+    }
+}
+@media (min-width: 750px) and (max-width: 1200px) {
+      .profiles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+    .profile{
+        height: calc(180px * 0.85);
+        width: calc(150px * 0.85);
+    }
+    .profile_user_image{
+        height: calc(150px * 0.85);
+        width: calc(150px * 0.85);
+        background-color: aquamarine;
+    }
+    .profile_user_image > img{
+        height: calc(150px * 0.85);
+        width: calc(150px * 0.85);
+        object-fit: contain;
+    }
+    .profile_user_name{
+        height: calc(30px * 0.85);
+        width: calc(150px * 0.85);
+    }
+    .question{
+        font-size: calc(50px * 0.85);    
+    }
+    .btn_manage_profiles{
+        height: calc(50px * 0.85);
+        width: calc(250px * 0.85); 
+        font-size: calc(25px * 0.85);
+        margin-top: calc(80px * 0.85);
+    }
 }

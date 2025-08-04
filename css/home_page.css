@@ -19,6 +19,7 @@ body{
     display: flex;
     align-items: center;
     width: 100%;
+    z-index: 1000;
     position: sticky;
     top: 0;
 }
@@ -90,7 +91,7 @@ ul, li{
     width: 100%;
     margin-top: 30px;
 }
-.movie_section_name{
+.movie_section_name {
     font-weight: bold;
     padding-top: 20px;
     margin-left: 20px;
@@ -98,16 +99,53 @@ ul, li{
     place-content: center;
     justify-content: center;
 }
-.movies{
+.movies {
     margin-top: 10px;
-    margin-left: 20px;
-    display: flex;
-    gap: 20px;
-    overflow: scroll;
+    position: relative;
+    overflow: hidden;
 }
-.movies::-webkit-scrollbar {
-  display: none;
+.movies .item {
+    border-radius: 10px;
+    overflow: hidden;
 }
+
+.movies .item img {
+    width: 100%;        /* fit inside the item */
+    height: auto;
+    display: block;
+    object-fit: cover;  /* crop instead of stretch */
+    border-radius: 10px;
+}
+
+.owl-nav button {
+    background: transparent;
+    color: black;
+    font-size: 8rem;
+    border: none;
+    outline: none;
+}
+
+.owl-nav button.owl-prev,
+.owl-nav button.owl-next {
+    position: absolute;
+    top: 35%;
+}
+
+.owl-nav button.owl-prev {
+    left: 25px;
+}
+
+.owl-nav button.owl-next {
+    right: 25px;
+}
+.owl-nav button.owl-prev:hover {
+    left: 25px;
+}
+
+.owl-nav button.owl-next {
+    right: 25px;
+}
+
 .game_section_name{
     font-weight: bold;
     padding-top: 20px;
@@ -132,56 +170,46 @@ ul, li{
 .movies > img{
     border-radius: 10px;
 }
-.trending_section_name{
-    font-weight: bold;
-    padding-top: 20px;
-    margin-left: 20px;
-    font-size: 20px;
-    place-content: center;
-    justify-content: center;
+.t10movies {
+  margin-top: 10px;
+  position: relative;
+  overflow: hidden; 
 }
-.t10movies{
-    margin-top: 10px;
-    margin-left: 20px;
-    display: flex;
-    gap: 220px;
-    overflow: scroll;
+
+.t10movie_block {
+  height: 200px;
+  display: flex;
+  position: relative;
 }
-.t10movies::-webkit-scrollbar {
-  display: none;
-}
-.t10movie_block{
-    height: 200px;
-    display: flex;
-    position: relative;
-}
-.t10movie_rank{
-    height: 200px;
-    font-size: 200px;
-    place-content: center;
-    align-content: center;
-    position: absolute;
-    font-weight: bold;
-    color: black;
-      text-shadow:
+
+.t10movie_rank {
+  height: 200px;
+  font-size: 200px;
+  display: grid;
+  place-content: center;
+  position: absolute;
+  font-weight: bold;
+  color: black;
+  text-shadow:
     -1px -1px 0 white,
      1px -1px 0 white,
     -1px  1px 0 white,
      1px  1px 0 white;
 }
-.t10movie_img{
-    position: absolute;
-    margin-left: 75px;
-    margin-top: 15px;
-    height: 200px;
-    place-content: center;
-    align-content: center;
+
+.t10movie_img {
+  position: absolute;
+  margin-left: 75px;
+  margin-top: 15px;
+  height: 200px;
+  display: grid;
+  place-content: center;
 }
 .t10movie_img > img {
-    height: 150px;
-    object-fit: cover;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
 }
-
 .footer{
     height: 500px;
     width: 100%;

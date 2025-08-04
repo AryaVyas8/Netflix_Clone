@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
     <link rel="stylesheet" href="css/home_page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 </head>
 <body>
     <div class="display_latest_background">
@@ -44,17 +48,17 @@
     <div class="content_block">
         <div class="movies_list">
             <div class="movie_section_name">Cop Universe</div>
-            <div class="movies">
-                <img src="img/Movie1.jpeg">
-                <img src="img/Movie2.jpeg">
-                <img src="img/Movie3.jpeg">
-                <img src="img/Movie4.jpeg">
-                <img src="img/Movie5.jpeg">
+            <div class="movies owl-carousel">
+                <div class="item"><img src="img/Movie1.jpeg"></div>
+                <div class="item"><img src="img/Movie2.jpeg"></div>
+                <div class="item"><img src="img/Movie3.jpeg"></div>
+                <div class="item"><img src="img/Movie4.jpeg"></div>
+                <div class="item"><img src="img/Movie5.jpeg"></div>
             </div>
         </div>
         <div class="trending_list">
             <div class="trending_section_name">Trending Top 10</div>
-            <div class="t10movies">
+            <div class="t10movies owl-carousel">
                 <div class="t10movie_block">
                 <div class="t10movie_rank">1</div>
                 <div class="t10movie_img">
@@ -110,7 +114,7 @@
                 </div>
                 </div>
                 <div class="t10movie_block">
-                <div class="t10movie_rank">10</div>
+                <div class="t10movie_rank">X</div>
                 <div class="t10movie_img">
                     <img src="img/t10Movie10.jpg">
                 </div>
@@ -163,6 +167,43 @@
 
     
     <script src="js/home_page.js"></script>
-    
+    <script>
+        $(".movies").owlCarousel({
+  loop: true,
+  margin: 20,         // replaces your old "gap: 20px"
+  nav: true,
+  responsive: {
+    0: { items: 1 },
+    600: { items: 2 },
+    1000: { items: 4 }
+  }
+});
+
+    </script>
+    <script>
+  var owl = $('.t10movies');
+  owl.owlCarousel({
+    loop: false,
+    nav: true,
+    margin: 10,
+    responsive: {
+      0: { items: 1 },
+      600: { items: 3 },
+      960: { items: 5 },
+      1200: { items: 6 }
+    }
+  });
+
+  // Mousewheel scroll support
+  owl.on('mousewheel', '.owl-stage', function (e) {
+    if (e.originalEvent.deltaY > 0) {
+      owl.trigger('next.owl');
+    } else {
+      owl.trigger('prev.owl');
+    }
+    e.preventDefault();
+  });
+</script>
+
 </body>
 </html>
